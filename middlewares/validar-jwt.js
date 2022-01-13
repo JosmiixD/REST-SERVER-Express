@@ -2,7 +2,7 @@ const { response, request } = require('express');
 const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuario');
 
-const validartJWT = async ( req = request , res = response,next ) => {
+const validarJWT = async ( req = request , res = response,next ) => {
 
     const token = req.header('x-token');
 
@@ -44,5 +44,5 @@ const validartJWT = async ( req = request , res = response,next ) => {
 }
 
 module.exports = {
-    validartJWT
+    validarJWT
 }

@@ -9,7 +9,7 @@ const { check } = require('express-validator');
 
 const {
     validarCampos,
-    validartJWT,
+    validarJWT,
     esAdminRole,
     tieneRole
 } = require('../middlewares');
@@ -47,7 +47,7 @@ router.put('/:id', [
 router.patch('/', usuariosPatch);
 
 router.delete('/:id',[
-    validartJWT,
+    validarJWT,
     // esAdminRole,
     tieneRole('ADMIN_ROLE', 'VENTAS_ROLE'),
     check('id', 'No es un ID valido').isMongoId(),
