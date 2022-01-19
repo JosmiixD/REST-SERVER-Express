@@ -24,9 +24,26 @@ const userExistsById = async( id ) => {
     }
 }
 
+/**
+ * Validar colecciones permitidas
+ */
+
+const coleccionesPermitidas = ( coleccion = '', colecciones = [] ) => {
+
+    const incluida = colecciones.includes( coleccion );
+
+    if( !incluida ) {
+        throw new Error(`La coleccion ${ coleccion } no es permitida - ${ colecciones }`)
+    }
+
+    return true;
+
+}
+
 
 module.exports = {
     isValidRole,
     emailIsTaken,
-    userExistsById
+    userExistsById,
+    coleccionesPermitidas
 }
